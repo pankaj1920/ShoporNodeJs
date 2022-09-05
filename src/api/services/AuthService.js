@@ -9,7 +9,7 @@ class AuthService {
   }
 
   static async login(data) {
-    const result = await UserSchema.findOne(data);
+    const result = await UserSchema.findOne({ data });
     return result;
   }
 
