@@ -19,6 +19,34 @@ class AuthValidator extends BaseValidator {
 
         return this.sendError(error)
     }
+
+    static login() {
+        const error = [
+            check('mobile').exists({ checkFalsy: true }).withMessage("Mobile Number Required").isMobilePhone("any").withMessage("Invalid Mobile Number"),
+            check('password').exists({ checkFalsy: true }).withMessage("Password Required").isLength({ min: 5 }).withMessage("Invalid Password")
+        ]
+
+        return this.sendError(error)
+    }
+
+    static generateOtp() {
+        const error = [
+            check('username').exists({ checkFalsy: true }).withMessage("Enter Number or Email to proceed")
+        ]
+        return this.sendError(error)
+    }
+
+    static updatePassword() {
+        const error = [
+            check('username').exists({ checkFalsy: true }).withMessage("Enter Number or Email"),
+            check('otp').exists({ checkFalsy: true }).withMessage('Otp is required').isLength({ min: 4 }).withMessage('OTp should be grater than 4'),
+            check('password').exists({ checkFalsy: true }).withMessage('Enter Password')
+        ]
+
+        return this.sendError(error)
+    }
 }
+
+
 
 export default AuthValidator

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-enum GENDER{
+enum GENDER {
     MALE,
     FEMALE,
     OTHER
@@ -10,8 +10,9 @@ const userSchema = new mongoose.Schema({
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     email: { type: String, required: true },
-    country_code: { type: String,  default: "+91" },
+    country_code: { type: String, default: "+91" },
     mobile: { type: String, required: true },
+    otp: { type: String, length: 4, default: "" },
     gender: { type: String, required: true },
     password: { type: String, required: true },
 })
