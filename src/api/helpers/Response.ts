@@ -1,13 +1,13 @@
-import { json } from "express";
+import { json, Request, Response } from "express";
 import Print from "./Print";
 
-export const SuccessResponse = ({ res, statuscode = "TXN", message, code = 200 }) => {
+export const SuccessResponse = function ({ res, statuscode = "TXN", message, code = 200 }): Response {
     let response = {
         status: 'success',
         statuscode: statuscode,
         message: message,
     };
-    Print.log(`Success Response => ${JSON.stringify(response)}`)
+    Print.log(`Success Response => ${JSON.stringify(response)}`);
     return res.status(code).json(response);
 };
 
@@ -45,7 +45,7 @@ export const ValidationError = ({ res, statusCode = "TXF", message = "Validation
     return res.status(code).json(response)
 }
 
-export const UnauthorizedResponse = ({ res, statusCode = "UA", message }) => {
+export const UnauthorizedResponse = ({ res, statusCode = "UA", message: message }) => {
     let response = {
         status: 'error',
         statuscode: statusCode,
@@ -55,4 +55,9 @@ export const UnauthorizedResponse = ({ res, statusCode = "UA", message }) => {
     return res.status(200).json(response);
 }
 
-
+export const GlobalErrorHandler = (err, req, res, next) => {
+    if (res.headersSent) {
+        return next(err)
+    }
+    ErrorResponse({ res: res, message: err.message })
+}

@@ -5,7 +5,6 @@ class AuthValidator extends BaseValidator {
 
     static register() {
         const error = [
-
             check('first_name', "First Name is required").exists({ checkFalsy: true }),
             check('last_name', "Last Name is required").exists({ checkFalsy: true }),
             check('email').exists({ checkFalsy: true }).withMessage('Email is required')

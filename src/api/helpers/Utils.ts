@@ -1,4 +1,4 @@
-import CryptoJs from 'crypto-js';
+// import CryptoJs from 'crypto-js';
 import Print from './Print';
 
 
@@ -11,14 +11,3 @@ export const randomNumber = (length: number): number => {
   }
   return Number(num);
 };
-
-export const encryptData = (data: string) => {
-  return CryptoJs.AES.encrypt(data, process.env.CRYPTO_KEY)
-}
-
-export const decryptData = (data: string): string => {
-  const hashData = CryptoJs.AES.decrypt(data, process.env.CRYPTO_KEY)
-  const validData = hashData.toString(CryptoJs.enc.Utf8)
-  Print.log(`Data => ${data} Hash => ${hashData} Valid => ${validData}`)
-  return validData
-}

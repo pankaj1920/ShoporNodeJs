@@ -1,12 +1,15 @@
+import { randomNumber } from './../helpers/Utils';
 import BaseController from "./base/BaseController";
-import CryptoJs from 'crypto-js';
+import { NextFunction, Request, Response } from 'express';
 import AuthService from "../services/AuthService";
-import { randomNumber, encryptData, decryptData } from "../helpers/Utils"
+import { encryptData, decryptData } from "../helpers/Encyptions"
+
 
 class AuthController extends BaseController {
 
     register() {
-        return this.asyncWrapper(async (req, res) => {
+
+        return this.asyncWrapper(async (req: Request, res: Response) => {
             const data = {
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
@@ -22,22 +25,26 @@ class AuthController extends BaseController {
             if (checkUser) {
                 this.ErrorResponse({ res: res, message: 'User Already Exist.' })
             } else {
-                const response = await AuthService.register(data)
-                this.SuccessResponseData({ res: res, message: 'User Register Successfully', data: response })
+                const response: any = await AuthService.register(data)
+                const { otp, password, ...userData } = response._doc
+
+                this.SuccessResponseData({ res: res, message: 'User Register Successfully', data: userData })
             }
 
         })
+
+
     }
 
     login() {
-        return this.asyncWrapper(async (req, res) => {
+        return this.asyncWrapper(async (req: Request, res: Response) => {
             const data = {
                 mobile: req.body.mobile,
                 password: req.body.password
             }
 
             // checkUser
-            const checkUser = await AuthService.getUserByMobile(data.mobile)
+            const checkUser: any = await AuthService.getUserByMobile(data.mobile)
 
 
             if (checkUser) {
@@ -47,12 +54,12 @@ class AuthController extends BaseController {
                 if (validPassword != data.password) {
                     this.ErrorResponse({ res: res, message: "Invalid Credentials" })
                 } else {
-                    const { password, ...loginData } = checkUser
+                    const { password, otp, ...loginData } = checkUser._doc;
 
                     this.SuccessResponseData({
                         res: res,
                         message: "Logged In Successfully",
-                        data: password
+                        data: loginData
                     })
                 }
 
@@ -63,7 +70,7 @@ class AuthController extends BaseController {
     }
 
     getOtp() {
-        return this.asyncWrapper(async (req, res) => {
+        return this.asyncWrapper(async (req: Request, res: Response) => {
             const data = {
                 username: req.body.username
             }
@@ -82,7 +89,7 @@ class AuthController extends BaseController {
     }
 
     updatePassword() {
-        return this.asyncWrapper(async (req, res) => {
+        return this.asyncWrapper(async (req: Request, res: Response) => {
             const data = {
                 username: req.body.username,
                 otp: req.body.otp,

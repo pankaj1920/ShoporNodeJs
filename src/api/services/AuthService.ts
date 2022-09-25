@@ -6,6 +6,7 @@ class AuthService {
         const user = new UserSchema(data)
         const result = user.save()
         return result
+
     }
 
     static async getUserByMobile(mobile) {
