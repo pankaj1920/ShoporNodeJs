@@ -40,6 +40,9 @@ app.listen(process.env.PORT || 5000, () => {
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+const options = { origin: '*' } // origin: 'http://localhost:3000',
+app.use(cors(options))
+
 routeModules(app)
 
 //catch 404 if URL not found
@@ -53,9 +56,3 @@ app.use((err, res, req) => {
 
 app.use(GlobalErrorHandler)
 
-const options = {
-  // origin: 'http://localhost:3000',
-  origin: '*',
-}
-
-app.use(cors(options))
