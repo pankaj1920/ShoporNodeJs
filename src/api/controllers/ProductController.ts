@@ -12,10 +12,7 @@ class ProductController extends BaseController {
         FILE_UPLOAD.paramName = "file";
         FILE_UPLOAD.storagePath = FileStoragePath.categoriesPath;
         return this.asyncWrapper(async (req, res: Response) => {
-
             try {
-
-
                 this.Print.log(" ========> " + FILE_UPLOAD.paramName)
                 await SFUploadMiddleware(req, res)
                 const a = req.file.path

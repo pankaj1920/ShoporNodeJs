@@ -1,6 +1,7 @@
 import express from 'express'
 import logger from 'morgan'
 const dotenv = require('dotenv').config();
+import cors from 'cors'
 import mongoose from 'mongoose';
 import routeModules from '../api/routes/api'
 import Print from '../api/helpers/Print'
@@ -51,3 +52,10 @@ app.use((err, res, req) => {
 });
 
 app.use(GlobalErrorHandler)
+
+const options = {
+  // origin: 'http://localhost:3000',
+  origin: '*',
+}
+
+app.use(cors(options))

@@ -10,6 +10,7 @@ class ProductValidator extends BaseValidator {
     static addCategories() {
         const errors = [
             check('category_name', "category_name is required").exists({ checkFalsy: true }),
+            check('icon_url', "Icon Url is required").exists({ checkFalsy: true })
         ]
 
         return this.sendError(errors)
