@@ -15,8 +15,10 @@ class ProductController extends BaseController {
             try {
                 this.Print.log(" ========> " + FILE_UPLOAD.paramName)
                 await SFUploadMiddleware(req, res)
-                const a = req.file.path
-                this.SuccessResponse({ res: res, message: "Success Path " + a.replaceAll("//", "/") })
+                const a = req.file
+                console.log(a)
+                this.Print.log(a)
+                this.SuccessResponse({ res: res, message: "Success Path " })
 
             } catch (err) {
                 this.ErrorResponse({ res: res, message: "Error uploading " + err })

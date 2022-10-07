@@ -10,7 +10,8 @@ const maxSize = 2 * 1024 * 1024;
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, FILE_UPLOAD.storagePath);
+        // cb(null, FILE_UPLOAD.storagePath);
+        cb(null, storagePath);
     },
     filename: (req, file, cb) => {
         const fileName = `${file.fieldname}_${Date.now()}_${path.extname(file.originalname)}`
@@ -20,12 +21,10 @@ let storage = multer.diskStorage({
     },
 });
 
-let uploadFile = multer(
-    Print.log("XXXXXXXXXXXXXXXXXXXXXXXXX " + FILE_UPLOAD.paramName)
-    , {
+let uploadFile = multer({
         storage: storage,
         limits: { fileSize: maxSize },
-    }).single(FILE_UPLOAD.paramName);
+}).single("file");
 
 
 const SFUploadMiddleware = util.promisify(uploadFile)
