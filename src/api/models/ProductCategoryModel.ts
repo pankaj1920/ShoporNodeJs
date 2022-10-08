@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 
 const productCategorySchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    image_url: { type: String, required: true }
+    category_name: { type: String, required: true },
+    icon_url: { type: String, required: true },
+    position: { type: Number, required: true },
+    status: { type: String, required: true, default: "enable" },
 })
 
 productCategorySchema.set('timestamps', {
@@ -10,6 +12,6 @@ productCategorySchema.set('timestamps', {
     'updatedAt': 'updated_at'
 })
 
-const ProductCategorySchema = mongoose.model('Product', productCategorySchema)
+const ProductCategorySchema = mongoose.model('categories', productCategorySchema)
 
 export default ProductCategorySchema

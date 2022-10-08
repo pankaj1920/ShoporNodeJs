@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Roadster",
+    "description": "Large 35 L Laptop Backpack CHALKERS Unisex Backpack With Rain Cover  (Blue) ",
+    "content": "Roadster Wolf Laptop Bag,Business Anti Theft Backpack with Lock,Water Resistant College School Laptop Backpack with Rain Cover and USB Charging Port Earphone Port,Backpack Gifts for 15.6 inch Laptop 25 L Travel Bag For Women & Men, Dark Grey",
+    "status": "published",
+    "images": [
+      "https://i.postimg.cc/YCDTt5wt/roadster-1.webp",
+      "https://i.postimg.cc/Gm6z7dCT/roadster-2.webp",
+      "https://i.postimg.cc/ZnfxrhHR/roadster-3.webp",
+      "https://i.postimg.cc/ZnfxrhHR/roadster-3.webp",
+      "https://i.postimg.cc/RhqHxJ1S/roadster-5.webp",
+      "https://i.postimg.cc/HsXQYXDn/roadster-6.webp"
+    ],
+    "quantity": 10,
+    "is_featured": 1,
+    "category_id": "633d3a9e5d5eb61685f5fefe",
+    "sale_type": "special_offer",
+    "price": 596,
+    "sale_price": 450,
+    "start_date": "",
+    "end_date": "",
+    "stock_status": "in_stock",
+    "created_at": "2022-09-25T01:46:37.849Z",
+    "updated_at": "2022-09-25T01:46:37.849Z"
+  },
+  {
+    "name": "TRUE HUMAN",
+    "description": "TRUE HUMAN Multipurpose Reflective backpack",
+    "content": "PREMIUM FABRIC : Stylish and durable laptop backpack for school /college and travel.; This “MAKE IN INDIA” Product features 2 large zippered compartments, 1 vertical long zip pocket at front, one laptop partition, 1 water bottle /umbrella pockets and Organizer Pockets inside. Suitable for casual usage , school / college / office n travel.",
+    "status": "published",
+    "images": [
+      "https://i.postimg.cc/hvTv88c5/True-1.jpg",
+      "https://i.postimg.cc/RVmZ5HMv/True-2.jpg",
+      "https://i.postimg.cc/bvZzH0R9/True-3.jpg",
+      "https://i.postimg.cc/fT5ZGq2v/True-4.jpg",
+      "https://i.postimg.cc/13fxLmN9/True-5.jpg",
+      "https://i.postimg.cc/ZRz1B6sR/True-6.jpg"
+    ],
+    "quantity": 33,
+    "is_featured": 1,
+    "category_id": "633d3a9e5d5eb61685f5fefe",
+    "sale_type": "none",
+    "price": 1136,
+    "sale_price": 996,
+    "start_date": "",
+    "end_date": "",
+    "stock_status": "in_stock",
+    "created_at": "2022-09-25T01:46:37.849Z",
+    "updated_at": "2022-09-25T01:46:37.849Z"
+  },
+  {
+    "name": "Fiesto Fashion Store",
+    "description": "Fiesto Fashion PU Leather Handbags With Sling Bag For Women Large Shoulder Tote Purse Top Handle Satchel",
+    "content": "Fiesto Fashion brings to you this lovely combo of a handbag, sling bag and a chain-strap clutch designed for the women of today. The bag is a lovely hue and the clutch and sling bag, similar to the handbag, are also in identical color combinations with an attractive tassel to top off the look with subtle femininity. The bags are suitable for daily wear, day trips, casual events and outings and you can carry them according to your requirement.",
+    "status": "published",
+    "images": [
+      "https://i.postimg.cc/T3CjFbWs/Fiesto-1.jpg",
+      "https://i.postimg.cc/KvmMbzFh/Fiesto-2.jpg",
+      "https://i.postimg.cc/d1vqCh5q/Fiesto-3.jpg",
+      "https://i.postimg.cc/262fB2qw/Fiesto-4.jpg",
+      "https://i.postimg.cc/bwkcRzDd/Fiesto-5.jpg"
+    ],
+    "quantity": 39,
+    "is_featured": 1,
+    "category_id": "633d3a9e5d5eb61685f5fefe",
+    "sale_type": "special_offer",
+    "price": 615,
+    "sale_price": 2999,
+    "start_date": "",
+    "end_date": "",
+    "stock_status": "in_stock",
+    "created_at": "2022-09-25T01:46:37.849Z",
+    "updated_at": "2022-09-25T01:46:37.849Z"
+  }
+]

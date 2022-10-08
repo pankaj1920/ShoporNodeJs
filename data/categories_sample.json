@@ -1,0 +1,50 @@
+[
+  {
+    "category_name": "Clothes",
+    "icon_url": "https://i.postimg.cc/FsBh5fdh/shirt.png",
+    "position": 0,
+    "status": "enabled"
+  },
+  {
+    "category_name": "Shoes",
+    "icon_url": "https://i.postimg.cc/BvYv6ht1/ic-shoes.png",
+    "position": 1,
+    "status": "enable"
+  },
+  {
+    "category_name": "Bags",
+    "icon_url": "https://i.postimg.cc/tTsFCnRp/ic-bag.png",
+    "position": 2,
+    "status": "enable"
+  },
+  {
+    "category_name": "Electronics",
+    "icon_url": "https://i.postimg.cc/MHWxmVc8/ic-electronic.png",
+    "position": 3,
+    "status": "enable"
+  },
+  {
+    "category_name": "Watch",
+    "icon_url": "https://i.postimg.cc/qvLkgmgx/ic-watch.png",
+    "position": 4,
+    "status": "enable"
+  },
+  {
+    "category_name": "Jewelry",
+    "icon_url": "https://i.postimg.cc/tg4VgnR7/ic-jewelery.png",
+    "position": 5,
+    "status": "enable"
+  },
+  {
+    "category_name": "Kitchen",
+    "icon_url": "https://i.postimg.cc/NfG2LKk3/ic-kitchen.png",
+    "position": 6,
+    "status": "enable"
+  },
+  {
+    "category_name": "Toys",
+    "icon_url": "https://i.postimg.cc/yYXG7b81/ic-toy.png",
+    "position": 7,
+    "status": "enable"
+  }
+]

@@ -23,6 +23,13 @@ class ProductController extends BaseController {
             }
         })
     }
+
+    getCategoryList() {
+        return this.asyncWrapper(async (req, res) => {
+            const data = await ProductService.getProductCategories()
+            this.SuccessResponseData({ res: res, message: "Data fetch successfully", data: data })
+        })
+    }
 }
 
 
