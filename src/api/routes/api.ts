@@ -1,7 +1,6 @@
 import express, { Express } from 'express'
 import userAuthRouter from './user/UserAuthRoute'
 import adminAuthRouter from './admin/AdminAuthRoute'
-import productRouter from './admin/ProductRoute'
 
 const routes = (app: Express) => {
   const apiPrefix = '/api';
@@ -12,7 +11,6 @@ const routes = (app: Express) => {
 
   // Admin Route
   app.use(adminPrefix, adminAuthRouter)
-  app.use(adminPrefix, productRouter)
 
   return app;
 };

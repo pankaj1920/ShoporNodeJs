@@ -12,7 +12,7 @@ export const SuccessResponse = function ({ res, statuscode = "TXN", message, cod
 };
 
 
-export const SuccessResponseData = ({ res, statusCode = "TXN", message, data, code = 200 }) => {
+export const SuccessResponseData = ({ res, statusCode = "TXN", message = "Data Fetched Successfully", data, code = 200 }) => {
     let response = {
         status: 'success',
         statuscode: statusCode,
