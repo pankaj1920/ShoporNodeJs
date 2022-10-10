@@ -27,8 +27,8 @@ class ProductValidator extends BaseValidator {
     static addProduct() {
         const error = [
             check('name').exists({ checkFalsy: true }).withMessage("name is required").isLength({ min: 3 }).withMessage("Product Name must be greater then 3 letter"),
-            check('description').exists({ checkFalsy: true }).withMessage("decription"),
-            check('content'),
+            check('description').exists({ checkFalsy: true }).withMessage("description is required").isLength({ min: 30 }).withMessage("Description must be of 30 words."),
+            check('content').exists({ checkFalsy: true }).withMessage("content is required").isLength({ min: 50 }).withMessage("Content must be atleast of 50 word"),
             check('status'),
             check('images'),
             check('quantity'),
