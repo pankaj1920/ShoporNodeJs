@@ -43,12 +43,12 @@ class ProductController extends BaseController {
     getProductListByCategories() {
         return this.asyncWrapper(async (req: Request, res: Response) => {
             const data = {
-                category_id: req.body.category_id
+                category_id: req.body.category
             }
 
             const productList = await ProductService.getProductListByCategories(data.category_id)
 
-            if (productList) {
+            if (productList.length > 0) {
                 this.SuccessResponseData({ res: res, message: "Data fetched Successfully", data: productList })
             } else {
                 this.ErrorResponse({ res: res, message: "No Data Found" })

@@ -19,14 +19,13 @@ class ProductService {
                 "in_stock"
         }]
         // data= ProductSchema.find({$and:constrain})
+        Print.log("Catergory Id " + category_id)
         if (category_id === 'all') {
             data = ProductSchema.find().populate({ path: 'category' })
 
         } else {
             // data = ProductSchema.find({ name: "TRUE HUMAN" }).populate({ path: 'category' })
-            data = ProductSchema.find({ category: ObjectId("633d3a9e5d5eb61685f5fefe") }).populate({ path: 'category' })
-
-
+            data = ProductSchema.find({ category: ObjectId(category_id) }).populate({ path: 'category' })
         }
         return data
 
