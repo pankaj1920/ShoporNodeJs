@@ -6,6 +6,12 @@ var ObjectId = require('mongodb').ObjectID;
 
 class ProductService {
 
+    static async addProduct(data) {
+        const result = new ProductSchema(data).save()
+        return result
+
+    }
+
     static async getProductCategories() {
         const data = ProductCategorySchema.find({ "status": "enable" })
         return data
@@ -24,7 +30,6 @@ class ProductService {
             data = ProductSchema.find().populate({ path: 'category' })
 
         } else {
-            // data = ProductSchema.find({ name: "TRUE HUMAN" }).populate({ path: 'category' })
             data = ProductSchema.find({ category: ObjectId(category_id) }).populate({ path: 'category' })
         }
         return data

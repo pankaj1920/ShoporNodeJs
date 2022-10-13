@@ -9,6 +9,6 @@ let router = express.Router()
 
 
 router.post('/add_categories', ProductValidator.addCategories(), ProductController.addCategories())
-router.post('/addProduct')
+router.post('/addProduct', ProductValidator.addProduct(), ProductController.addProduct())
 
 export default router

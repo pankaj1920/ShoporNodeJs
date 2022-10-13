@@ -1,7 +1,7 @@
-import { body } from 'express-validator';
+
 import { FileStoragePath, FileUploadParam } from './../helpers/Constants';
 import { FILE_UPLOAD } from './../helpers/AppHandler';
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, response, Response } from 'express';
 
 import SFUploadMiddleware from "../middlewares/SFUploadMiddleware";
 import BaseController from "./base/BaseController";
@@ -30,7 +30,36 @@ class ProductController extends BaseController {
     }
 
     addProduct() {
+        return this.asyncWrapper(async (req: Request, res: Response) => {
 
+            const data = {
+                name: req.body.name,
+                description: req.body.description,
+                content: req.body.content,
+                status: req.body.status,
+                images: req.body.images,
+                quantity: req.body.quantity,
+                is_featured: req.body.is_featured,
+                category: req.body.category_id,
+                sale_type: req.body.sale_type,
+                price: req.body.price,
+                sale_price: req.body.sale_price,
+                start_date: req.body.start_date,
+                end_date: req.body.end_date,
+                stock_status: req.body.stock_status,
+                num_review: req.body.num_review,
+                rating: req.body.rating,
+            }
+
+            const result = await ProductService.addProduct(data)
+
+            if (result) {
+                this.SuccessResponseData({ res: res, message: "Product Added Successfully", data: result })
+            } else {
+                this.ErrorResponse({ res: res, message: "Error while adding product" })
+            }
+
+        })
     }
 
     getCategoryList() {
