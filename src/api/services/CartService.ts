@@ -1,20 +1,21 @@
 import CartItemModel from "../models/CartModel";
+var ObjectId = require('mongodb').ObjectID;
 
 class CartService {
 
-    static getCartItem(userId) {
-        const data = CartItemModel.find({ userId: userId })
+    static async getCartItem(userId) {
+        const data = CartItemModel.find({ userId: ObjectId(userId) })
         return data
     }
 
-    static addToCart(cartItem: {}) {
+    static async addToCart(cartItem: {}) {
         const data = new CartItemModel(cartItem)
         const result = data.save()
         return result
     }
 
 
-    static updateCart(data: {}) {
+    static async updateCart(data: {}) {
 
     }
 }
