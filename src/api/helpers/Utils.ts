@@ -1,5 +1,4 @@
-// import CryptoJs from 'crypto-js';
-import Print from './Print';
+
 
 
 export const randomNumber = (length: number): number => {
@@ -11,3 +10,14 @@ export const randomNumber = (length: number): number => {
   }
   return Number(num);
 };
+
+
+// declare global {
+//   interface Array<T> {
+//     isEmpty(): Boolean
+//   }
+// }
+
+// Array.prototype.isEmpty = function () {
+//   return this.length <= 0
+// }

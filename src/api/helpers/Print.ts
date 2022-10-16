@@ -1,5 +1,6 @@
 
 class Print {
+
   static log(message: string): void {
     if (process.env.NODE_ENV != 'pro') {
       console.log(`Log : ${message}   ############### \n`);
@@ -18,6 +19,17 @@ class Print {
       console.warn(
         `Warning : ${message}   s############### \n`
       );
+    }
+  }
+
+  static data(data: any) {
+    if (process.env.NODE_ENV != 'pro') {
+      console.log(
+        `############### CONSOLE DATA ###############`
+      );
+
+
+      console.log(data)
     }
   }
 

@@ -15,7 +15,7 @@ class CartValidator extends BaseValidator {
     static addCartItem() {
         const error = [
             check('userId', "userId is required").exists({ checkFalsy: true }),
-            check('productId', "productId is required").exists({ checkFalsy: true })
+            check('products', "products is required").exists({ checkFalsy: true })
         ]
 
         return this.sendError(error)

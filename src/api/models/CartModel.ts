@@ -2,7 +2,11 @@ import mongoose from "mongoose";
 
 const cartSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'user' },
-    product: { type: Array<mongoose.Schema.Types.ObjectId>, required: true, ref: 'product' }
+    products: [{
+        productId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'product' },
+        price: { type: Number },
+        quantity: { type: Number }
+    }]
 })
 
 cartSchema.set('timestamps', {

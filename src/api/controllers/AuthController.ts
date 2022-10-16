@@ -1,8 +1,9 @@
-import { randomNumber } from './../helpers/Utils';
+
 import BaseController from "./base/BaseController";
 import { NextFunction, Request, Response } from 'express';
 import AuthService from "../services/AuthService";
 import { encryptData, decryptData } from "../helpers/Encyptions"
+import { randomNumber } from "../helpers/Utils";
 
 
 class AuthController extends BaseController {
