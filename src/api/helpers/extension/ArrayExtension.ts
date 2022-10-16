@@ -2,6 +2,7 @@ interface Array<T> {
     isEmpty(): Boolean
     isNotEmpty(): Boolean
     first(): any
+    removeItem(key): any
 }
 
 

@@ -59,6 +59,33 @@ class CartController extends BaseController {
         })
     }
 
+    removeCartItem() {
+        return this.asyncWrapper(async (req: Request, res: Response) => {
+            const data = {
+                userId: req.body.userId,
+                cartItemId: req.body.cartItemId
+            }
+
+            const checkUserCart = (await CartService.getCartItem(data.userId)).first()
+            if (checkUserCart) {
+                let cartProductList = checkUserCart.products
+                const itemIndex = cartProductList.findIndex(item => item.id == data.cartItemId)
+
+                if (itemIndex > -1) {
+                    cartProductList.splice(itemIndex, 1);
+                    const updateCart = await CartService.updateCart(cartProductList.id, cartProductList)
+                    this.SuccessResponseData({ res: res, message: "Item removed from cart", data: updateCart })
+                } else {
+                    this.ErrorResponse({ res: res, message: "Item not found in cart" })
+                }
+
+
+            } else {
+                this.ErrorResponse({ res: res, message: "Your cart is empty" })
+            }
+        })
+    }
+
     getOneProductPrice(price: string, quantity: string): number {
         return parseInt(price) / parseInt(quantity)
     }

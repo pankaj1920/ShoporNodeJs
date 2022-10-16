@@ -25,6 +25,7 @@ router.post('/productlist', ProductValidator.productListByCategory(), productCon
 //Cart Apis
 router.post('/getCartItem', CartValidator.getCartItem(), cartController.getCartItem())
 router.post('/addToCart', CartValidator.addCartItem(), cartController.addCartItem())
+router.post('/removeCartItem', CartValidator.removeCartItem(), cartController.removeCartItem())
 /* router.post("/register",(req,res)=>{
     Print.log("Register Api is working")
 })
